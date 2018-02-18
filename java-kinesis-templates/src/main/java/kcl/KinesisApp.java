@@ -6,7 +6,7 @@ import com.amazonaws.services.kinesis.clientlibrary.interfaces.v2.IRecordProcess
 import com.amazonaws.services.kinesis.clientlibrary.lib.worker.InitialPositionInStream;
 import com.amazonaws.services.kinesis.clientlibrary.lib.worker.KinesisClientLibConfiguration;
 import com.amazonaws.services.kinesis.clientlibrary.lib.worker.Worker;
-import conf.ConfigurationUtility;
+import config.ConfigurationUtility;
 import org.apache.commons.configuration2.Configuration;
 
 import java.util.UUID;
@@ -17,7 +17,7 @@ public class KinesisApp {
 
     public static void main(String[] args) {
         //Get configuration properties
-        Configuration conf  = ConfigurationUtility.getConfiguration("src/main/resources/config.properties");
+        Configuration conf = ConfigurationUtility.getConfiguration("src/main/resources/config.properties");
         String applicationName = conf.getString("kinesis.application_name");
         String kinesisStreamName = conf.getString("kinesis.stream_name");
 
